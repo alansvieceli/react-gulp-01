@@ -1,10 +1,15 @@
 import ReactDOM from 'react-dom'
 import React from 'react'
+
 import Titulo from './titulo/titulo'
+import Navbar from './navbar/navbar'
 
 let App = (
-    <div className="container">
-        <Titulo />
+    <div>
+        <Navbar  titulo="React" cor="orange"/>
+        <div className="container">
+            <Titulo />
+        </div>
     </div>
 );
 
