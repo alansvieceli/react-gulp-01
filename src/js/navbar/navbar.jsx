@@ -1,4 +1,5 @@
 import React from 'react'
+import NavMenu from './nav-menu'
 
 class Navbar extends React.Component{
     render(){
@@ -8,21 +9,13 @@ class Navbar extends React.Component{
           {titulo: "Sobre", link: "#sobre"}
         ];
 
-        let lista = menu.map(function(value, index){
-          return (
-            <li key={value.titulo}><a href="{value.link}">{value.titulo}</a></li>
-          );
-        });
-
         let corNav = "nav-wrapper " + this.props.cor;
         return (
           <nav>
             <div className={corNav}>
               <div className="container">
                 <a href="#" className="brand-logo">{this.props.titulo}</a>
-                <ul id="nav-mobile" className="right">
-                  {lista}
-                </ul>
+                <NavMenu menu={menu} />
               </div>
             </div>
           </nav>

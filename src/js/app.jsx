@@ -6,7 +6,7 @@ import Navbar from './navbar/navbar'
 
 let App = (
     <div>
-        <Navbar  titulo="React" cor="orange"/>
+        <Navbar  titulo="React" cor="red"/>
         <div className="container">
             <Titulo />
         </div>
