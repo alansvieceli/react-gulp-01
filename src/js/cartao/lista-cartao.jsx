@@ -17,7 +17,7 @@ class ListaCartao extends React.Component{
         let novaLista = [];
         for (let i=0; i < noticias.length; i++){
             aux.push(noticias[i]);
-            if (aux.length == 3){
+            if (aux.length == this.props.qtdLinha){
                 novaLista.push(aux);
                 aux = [];
             } else 
@@ -26,11 +26,13 @@ class ListaCartao extends React.Component{
             }
         }
 
+        let tamColuna = "col m" + this.props.tamColuna;
+
         let listaCartoes = function(grupo){            
             return grupo.map(function(item, index){
                 return (
-                    <div key={index} className="col m4"> 
-                        <Cartao />
+                    <div key={index} className={tamColuna}> 
+                        <Cartao dados={item} />
                     </div>
                 );
             });
@@ -41,9 +43,7 @@ class ListaCartao extends React.Component{
                     {listaCartoes(grupo)}
                 </div>
             );
-        });
-
-        
+        });        
 
         return (
           <div>
