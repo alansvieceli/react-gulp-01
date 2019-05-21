@@ -2,6 +2,19 @@ import React from 'react'
 import Cartao from './cartao'
 
 class ListaCartao extends React.Component{
+    constructor(props){
+        super(props);
+        this.state = {cliques: 0}
+        this.addClique = this.addClique.bind(this);
+    }
+
+    addClique(){
+        //this.setState({cliques: this.state.cliques + 1});
+        this.setState((prevState)=>({
+            cliques: prevState.cliques + 1
+        }));
+    }
+
     render(){
         let noticias = [
             {titulo: "Titulo 1", descricao: "Descrição", detalhe: "Detalhe comm um texto legal", imagem: "https://materializecss.com/images/office.jpg", link: "#teste"},
@@ -28,25 +41,30 @@ class ListaCartao extends React.Component{
 
         let tamColuna = "col m" + this.props.tamColuna;
 
-        let listaCartoes = function(grupo){            
+        let listaCartoes = function(grupo, self){               
+            
             return grupo.map(function(item, index){
                 return (
                     <div key={index} className={tamColuna}> 
-                        <Cartao dados={item} />
+                        <Cartao dados={item} addClique={self.addClique} />
                     </div>
                 );
             });
         }
-        let linha = novaLista.map(function(grupo, index) {            
+
+        let self = this;
+
+        let linha = novaLista.map(function(grupo, index) {                        
             return (
                 <div key={index} className="row"> 
-                    {listaCartoes(grupo)}
+                    {listaCartoes(grupo, self)}
                 </div>
             );
         });        
 
         return (
           <div>
+              <p>Quantidade de cliques: {this.state.cliques}</p>
               {linha}
           </div>
         );
