@@ -3,12 +3,6 @@ import NavMenu from './nav-menu'
 
 class Navbar extends React.Component{
 
-    constructor(props){
-      super(props);
-      this.state = {menuAtivo: "Home"}
-
-    }
-
     render(){
         let menu = [
           {titulo: "Home", link: "#home"},
