@@ -5,7 +5,7 @@ class NavMenu extends React.Component{
 
         let lista = this.props.menu.map(function(value, index){
             return (
-              <li key={value.titulo}><a href="{value.link}">{value.titulo}</a></li>
+              <li key={value.titulo}><a href={value.link}>{value.titulo}</a></li>
             );
           });
 
