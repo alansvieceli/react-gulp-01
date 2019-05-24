@@ -1,6 +1,7 @@
 import React from 'react'
 import Cartao from './cartao'
 import Busca from '../busca/busca'
+import Axios from 'axios'
 
 class ListaCartao extends React.Component{
     constructor(props){
@@ -44,37 +45,13 @@ class ListaCartao extends React.Component{
     
       componentDidMount(){
 
-        this.setState({
-            dados: [
-                {titulo: "Titulo 1", descricao: "Descrição", detalhe: "Detalhe comm um texto legal", imagem: "https://materializecss.com/images/office.jpg", link: "#teste"},
-                {titulo: "Titulo 2", descricao: "Descrição", detalhe: "Detalhe comm um texto legal", imagem: "https://materializecss.com/images/office.jpg", link: "#teste"},
-                {titulo: "Titulo 3", descricao: "Descrição", detalhe: "Detalhe comm um texto legal", imagem: "https://materializecss.com/images/office.jpg", link: "#teste"},
-                {titulo: "Titulo 4", descricao: "Descrição", detalhe: "Detalhe comm um texto legal", imagem: "https://materializecss.com/images/office.jpg", link: "#teste"},
-                {titulo: "Titulo 5", descricao: "Descrição", detalhe: "Detalhe comm um texto legal", imagem: "https://materializecss.com/images/office.jpg", link: "#teste"},
-                {titulo: "Titulo 6", descricao: "Descrição", detalhe: "Detalhe comm um texto legal", imagem: "https://materializecss.com/images/office.jpg", link: "#teste"},
-                {titulo: "Titulo 7", descricao: "Descrição", detalhe: "Detalhe comm um texto legal", imagem: "https://materializecss.com/images/office.jpg", link: "#teste"}
-            ],
-            servidor: [
-                {titulo: "Titulo 1", descricao: "Descrição", detalhe: "Detalhe comm um texto legal", imagem: "https://materializecss.com/images/office.jpg", link: "#teste"},
-                {titulo: "Titulo 2", descricao: "Descrição", detalhe: "Detalhe comm um texto legal", imagem: "https://materializecss.com/images/office.jpg", link: "#teste"},
-                {titulo: "Titulo 3", descricao: "Descrição", detalhe: "Detalhe comm um texto legal", imagem: "https://materializecss.com/images/office.jpg", link: "#teste"},
-                {titulo: "Titulo 4", descricao: "Descrição", detalhe: "Detalhe comm um texto legal", imagem: "https://materializecss.com/images/office.jpg", link: "#teste"},
-                {titulo: "Titulo 5", descricao: "Descrição", detalhe: "Detalhe comm um texto legal", imagem: "https://materializecss.com/images/office.jpg", link: "#teste"},
-                {titulo: "Titulo 6", descricao: "Descrição", detalhe: "Detalhe comm um texto legal", imagem: "https://materializecss.com/images/office.jpg", link: "#teste"},
-                {titulo: "Titulo 7", descricao: "Descrição", detalhe: "Detalhe comm um texto legal", imagem: "https://materializecss.com/images/office.jpg", link: "#teste"}
-            ]
-        });
-
-        /*
         let self = this;        
-        axios.get('http://localhost:8000/servidor.php?dados=1').then(function(response){
+        Axios.get('http://localhost:8000/servidor.php?dados=1').then(function(response){
           self.setState({
             dados: response.data,
             servidor: response.data
           });
         });
-        */
-    
       }
 
     render(){

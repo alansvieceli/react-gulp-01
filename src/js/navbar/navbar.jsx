@@ -1,26 +1,38 @@
 import React from 'react'
 import NavMenu from './nav-menu'
+import Axios from 'axios'
 
 class Navbar extends React.Component{
 
-    render(){
-        let menu = [
-          {titulo: "Home", link: "#home"},
-          {titulo: "Contato", link: "#contato"},
-          {titulo: "Sobre", link: "#sobre"}
-        ];
+  constructor(props){
+    super(props);
+    this.state = {menu: []};
+  }
 
-        let corNav = "nav-wrapper " + this.props.cor;
-        return (
-          <nav>
-            <div className={corNav}>
-              <div className="container">
-                <a href="#" className="brand-logo">{this.props.titulo}</a>
-                <NavMenu menu={menu} />
-              </div>
+      
+  componentDidMount(){
+
+    let self = this;        
+    Axios.get('http://localhost:8000/servidor.php?menu=1').then(function(response){
+      self.setState({menu: response.data});
+    });
+    
+  }
+
+  render(){
+      let menu = this.state.menu;
+
+      let corNav = "nav-wrapper " + this.props.cor;
+      return (
+        <nav>
+          <div className={corNav}>
+            <div className="container">
+              <a href="#" className="brand-logo">{this.props.titulo}</a>
+              <NavMenu menu={menu} />
             </div>
-          </nav>
-        );
-    }}
+          </div>
+        </nav>
+      );
+  }}
 
 export default Navbar;
