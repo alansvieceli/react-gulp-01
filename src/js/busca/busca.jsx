@@ -19,7 +19,7 @@ class Busca extends React.Component{
     render(){
         return (
             <form onSubmit={this.onSubmit}>
-                <div className="input-field col s6">
+                <div className="input-field col s12">
                     <input placeholder="Digite sua busca" onChange={this.atualizaBusca} type="text" value={this.props.busca} />
                     <label htmlFor="busca">Busca</label>
                 </div>                

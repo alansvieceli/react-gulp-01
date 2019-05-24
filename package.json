@@ -3,12 +3,6 @@
   "version": "1.0.0",
   "description": "Curso de React 01",
   "main": "server.js",
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
   "keywords": [
     "react",
     "gulp",
@@ -23,5 +17,7 @@
     "react-dom": "^16.8.6",
     "react-scripts": "^3.0.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "express": "^4.17.0"
+  }
 }
